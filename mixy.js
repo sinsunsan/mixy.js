@@ -7,3 +7,4 @@ var mixy = {
       return ret;  
   },
 }
+console.log('mixy utiliy loaded !');
