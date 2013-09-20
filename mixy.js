@@ -34,6 +34,16 @@ var mixy = {
     }
   },
   
+  // Return the height of the window
+  getWinHeight : function() {
+    var viewportheight;
+  	if (typeof window.innerHeight != 'undefined') viewportheight = window.innerHeight
+  	else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientHeight != 'undefined' && document.documentElement.clientHeight != 0) viewportheight = document.documentElement.clientHeight
+  	else viewportheight = document.getElementsByTagName('body')[0].clientHeight
+  	
+  	return viewportheight;  
+  },  
+  
   // Return the width of the window
   getWinWidth : function() {
     var viewportwidth;
