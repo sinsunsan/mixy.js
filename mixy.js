@@ -8,6 +8,41 @@ var mixy = {
       }
       return ret;  
   },
+  
+  getUrlParts: function(){
+    var urlParts = window.location.pathname.split('/');
+    return urlParts;
+  },
+  addWidth: function() {
+    var screenWidth = this.getWinWidth();
+    $('body').attr('data-screenwidth', screenWidth.toString());
+  },
+  
+  addBodyUrlClasses: function() {
+    var urlParts = this.getUrlParts();
+    var classes = '';
+    for (var i = 0; i < urlParts.length; i++) {
+      if (urlParts[i] != null) {
+        var part = urlParts[i]; // Remove the .
+        part = part.replace(/html/, '');
+        part = part.replace(/\./, '');
+        classes += ' ' + part;
+      }
+    }
+    if (classes != null) {
+      $('body').addClass(classes);
+    }
+  },
+  
+  // Return the width of the window
+  getWinWidth : function() {
+    var viewportwidth;
+    if (typeof window.innerWidth != 'undefined') viewportwidth = window.innerWidth
+    else if (typeof document.documentElement != 'undefined' && typeof document.documentElement.clientWidth != 'undefined' && document.documentElement.clientWidth != 0) viewportwidth = document.documentElement.clientWidth
+    else viewportwidth = document.getElementsByTagName('body')[0].clientWidth
+    return viewportwidth;
+  },
+  
   test: function(){
     mixyTest.init();
   }
