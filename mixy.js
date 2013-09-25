@@ -13,6 +13,7 @@ var mixy = {
     var urlParts = window.location.pathname.split('/');
     return urlParts;
   },
+  
   addWidth: function() {
     var screenWidth = this.getWinWidth();
     $('body').attr('data-screenwidth', screenWidth.toString());
@@ -32,6 +33,17 @@ var mixy = {
     if (classes != null) {
       $('body').addClass(classes);
     }
+  },
+  
+  getUrlPara: function(name) {
+    return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+  },
+  
+  // Find the a in the div, and make the whole div clickable
+  makeDivClickable: function(ele) {
+    $(ele).click(function() {
+      window.location = $(this).find("a").attr("href");
+    });
   },
   
   // Return the height of the window
