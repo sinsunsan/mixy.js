@@ -88,4 +88,3 @@ var mixyTest = {
     
   }
 }
-console.log('mixy utiliy loaded !');
