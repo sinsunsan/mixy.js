@@ -56,6 +56,17 @@ var mixy = {
   	return viewportheight;  
   },  
   
+  // container : selector of the container 
+  // center : selection of the centered div
+  verticalCenter: function(container, element) {
+    var container = $(container);
+    var center = $(element);
+    // Vertical center an element is 
+    // (Container's height  / 2) - Element's height
+    var offset = (container.height / 2) - (element.height);
+    center.css("top", offset);
+  },
+  
   // Return the width of the window
   getWinWidth : function() {
     var viewportwidth;
