@@ -57,14 +57,15 @@ var mixy = {
   },  
   
   // container : selector of the container 
-  // center : selection of the centered div
-  verticalCenter: function(container, element) {
-    var container = $(container);
-    var center = $(element);
+  // ele : selection of the centered div
+  verticalCenter: function(container, ele) {    
+    var contHeight = $(container).height();
+    var eleHeight = $(ele).height();
+    
     // Vertical center an element is 
     // (Container's height  / 2) - Element's height
-    var offset = (container.height / 2) - (element.height);
-    center.css("top", offset);
+    var offset = (contHeight / 2) - (eleHeight / 2);
+    $(ele).css("top", offset);
   },
   
   // Return the width of the window
