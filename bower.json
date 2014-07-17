@@ -1,0 +1,21 @@
+{
+  "name": "mixyjs",
+  "version": "0.5.0",
+  "homepage": "https://github.com/sinsunsan/mixy.js",
+  "main": "./mixy.js",
+  "authors": [
+    "Sébastien Lucas"
+  ], 
+  "description": "Mixy.js is a library of js utilies",
+  "keywords": [
+    "js",
+    "utilies" 
+  ], 
+  "licence": "MIT",
+  "ignore": [
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
